@@ -1,29 +1,22 @@
-import React, { Component } from 'react';
-import TextBox from '../component/TextBox'
-import './Login.css';
-import Button from '../component/Button'
-import Password from '../component/Password'
-import Label from '../component/Label'
-import H from '../component/H'
-import Form from '../component/Form'
+import React, { Component } from "react";
+import "./Login.css";
+import { Form, Input, Button } from "reactstrap";
 
-
-class Login extends Component
-{
-    render()
-    {
-        return (
-            <Form className="form-signin">
-                <H className="h3 mb-3 font-weight-normal" text="Please sign in"/>
-                <Label forId="inputUserName" className="sr-only" text="User name"></Label>
-                <TextBox className="form-control" placeholder="User Name" id="inputUserName"></TextBox>
-                <Label forId="inputPasssword" className="sr-only" text="Password"></Label>
-                <Password className="form-control" placeholder="Password" id="inputPasssword"></Password>
-                <Button className="btn btn-lg btn-primary btn-block" text="Sign in"/>            
-          </Form>
-        );
-    }
-
+class Login extends Component {
+  render() {
+    return (
+      <div className="text-center">
+        <h2>Welcome to bookmarker </h2>
+        <Form className="form-signin ">
+          <Input type="text" placeholder="User Name" />
+          <Input type="password" placeholder="Password" />
+          <Button outline color="primary" size="lg">
+            Sign in
+          </Button>
+        </Form>
+      </div>
+    );
+  }
 }
 
 export default Login;
