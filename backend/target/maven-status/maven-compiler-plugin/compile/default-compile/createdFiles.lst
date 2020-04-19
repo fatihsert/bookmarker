@@ -1,0 +1,6 @@
+com/demo/security/TokenVariables.class
+com/demo/entity/User.class
+com/demo/repository/UserRepository.class
+com/demo/security/Tokenization.class
+com/demo/BookmarkerApplication.class
+com/demo/api/UserLoginController.class
