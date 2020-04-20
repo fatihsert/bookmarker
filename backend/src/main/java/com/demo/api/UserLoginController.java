@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @Api(value="User Management System", description="backend swagger implementation")
 
 public class UserLoginController {
@@ -57,7 +58,7 @@ public class UserLoginController {
             String ali = Tokenization.createJWT("1","Ali","deneme",10000000);
             System.out.println(Tokenization.decodeJWT(ali));
 
-            return ali;
+            return ali  ;
         }
         else {
             return "Password wrong";
