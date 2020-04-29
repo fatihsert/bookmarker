@@ -17,7 +17,7 @@ public class Tokenization {
 
     public static String SECRET_KEY = "alikayim";
 
-    public static String createJWT(String id,String issuer,String subject, long ttlMillis ){
+    public static String createJWT(String id,String issuer,String subject, long ttlMillis, String username ){
 
         SignatureAlgorithm signatureAlgorithm =SignatureAlgorithm.HS256;
 
@@ -28,7 +28,7 @@ public class Tokenization {
 
         Key signingKey = new SecretKeySpec(apiKeySecretBytes, signatureAlgorithm.getJcaName());
 
-        JwtBuilder builder = Jwts.builder().setId(id).setIssuedAt(now).setSubject(subject).setIssuer(issuer).signWith(signatureAlgorithm,signingKey);
+        JwtBuilder builder = Jwts.builder().setId(id).setIssuedAt(now).setSubject(subject).setIssuer(issuer).signWith(signatureAlgorithm,signingKey).setAudience(username);
 
         if (ttlMillis > 0){
             long expMillis = nowMillis + ttlMillis;
